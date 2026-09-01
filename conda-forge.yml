@@ -6,4 +6,12 @@ github:
   tooling_branch_name: main
 conda_build:
   error_overlinking: true
+  pkg_format: '2'
+  # Highest compression is 22. Increased compression to prevent timeout issue when
+  # uploading packages. (Smaller package; less upload time)
+  zstd_compression_level: 22
 conda_forge_output_validation: true
+provider:
+  linux_64: github_actions
+  linux_aarch64: github_actions
+  win: github_actions
